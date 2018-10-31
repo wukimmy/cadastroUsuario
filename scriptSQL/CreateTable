@@ -1,0 +1,6 @@
+CREATE TABLE cliente (
+    codigo char(7) NOT NULL,
+    nome varchar(255) NOT NULL,
+    endereco varchar(255),
+    PRIMARY KEY (codigo)
+);
