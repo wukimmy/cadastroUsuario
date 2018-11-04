@@ -20,9 +20,9 @@
 				<h2>Dados: </h2>
 				<ul>
 				<?php
-                    include "conexao.php";
+                    include "./conexao.php";
 
-                    $consulta = "select * from cliente";
+                    $consulta = "select * from usuario";
                     $resultado = mysqli_query($GLOBALS["conexao"],$consulta);
 
                     if($resultado != null)

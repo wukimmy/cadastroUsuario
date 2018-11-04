@@ -2,7 +2,7 @@
 	$servidor = "localhost";
 	$login = "root";
 	$senha = "";
-	$banco = "dbCliente";
+	$banco = "dbCadastro";
 
 	$conexao = mysqli_connect('127.0.0.1:3303', 'root', '');
 

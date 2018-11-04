@@ -1,6 +1,9 @@
-CREATE TABLE cliente (
+CREATE TABLE usuario (
     codigo char(7) NOT NULL,
     nome varchar(255) NOT NULL,
-    endereco varchar(255),
+    idade char(2) NOT NULL,
+    email varchar(255),
+    sexo varchar(15),
+    curso varchar(30),
     PRIMARY KEY (codigo)
 );
