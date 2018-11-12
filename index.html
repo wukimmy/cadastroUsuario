@@ -27,7 +27,7 @@
         </div>
     </nav>
     <div class="container">
-        <form method="post" action="./dao/gravar.php">
+        <form method="post" action="./dao/gravar.php" action="?action=save" name="meuForm">
             <div class="head">
                 <h2>Cadastro</h2>
             </div>
@@ -52,20 +52,93 @@
             </p>
             <br />
             <label>Selecione o curso</label>
-            <select class="browser-default" name ="curso">
-                <option value="" disabled selected >Selecione o curso</option>
-                <option value="computacao" >Ciências da Computação</option>
-                <option value="informatica" >Bacharelado em Informática</option>
-                <option value="engenharia" >Engenharia da computação</option>
+            <select class="browser-default" name="curso">
+                <option value="" disabled selected>Selecione o curso</option>
+                <option name="curso" value="Ciências da Computação">Ciências da Computação</option>
+                <option name="curso" value="Bacharelado em Informática">Bacharelado em Informática</option>
+                <option name="curso" value="Engenharia da computação">Engenharia da computação</option>
             </select>
             <br />
-            <button id="submit" type="submit">
+            Conhecimentos:
+            <br />
+            <label>
+                <input type="checkbox" name="word" />
+                <span>Microsoft Word</span>
+            </label>
+            <label>
+                <input type="checkbox" name="html" value="HTML" />
+                <span>HTML</span>
+            </label>
+            <label>
+                <input type="checkbox" name="js" value="JavaScript" />
+                <span>JavaScript</span>
+            </label>
+            <label>
+                <input type="checkbox" name="php" value="PHP" />
+                <span>PHP</span>
+            </label>
+            <br />
+            <br />
+            <button id="submit" type="submit" onclick="">
                 Enviar
+            </button>
+            <button id="limpar" type="reset">
+                Limpar
             </button>
         </form>
     </div>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        function validaForm() {
+            var tamanho_nome = document.forms["meuForm"].nome.value.length;
+            if (tamanho_nome < 5 || tamanho_nome > 64) {
+                alert("O campo 'Nome' deve ter entre 5 e 64 caracteres.");
+                return FALSE;
+            }
+            var idade = document.forms["meuForm"].idade.value;
+            if (isNaN(idade) || idade < 4 || idade > 120) {
+                alert("O campo 'Idade' deve ter preenchido corretamente.");
+                return FALSE;
+            }
+            var email = document.forms["meuForm"].email.value;
+            if (email.length < 5 || email.length > 128 ||
+                email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+                alert("O campo 'E-mail' deve ter preenchido corretamente.");
+                return FALSE;
+            }
+            var campo_sexo = document.forms["meuForm"].campo_sexo;
+            var sexo = FALSE;
+            for (i = 0; i < campo_sexo.length; i++) {
+                if (campo_sexo[i].checked == TRUE) {
+                    sexo = campo_sexo[i].value;
+                    break;
+                }
+            }
+            if (sexo == FALSE) {
+                alert("O campo 'Sexo' deve ser preenchido.");
+                return FALSE;
+            }
+            var opcao_curso = document.forms["meuForm"].curso.selectedIndex;
+            if (opcao_curso == 0) {
+                alert("O campo 'Curso' deve ser preenchido.");
+                return FALSE;
+            }
+            var conhecimentos = document.forms["meuForm"].elements['CAMPO_CONHECIMENTOS[]'];
+            var conhecimentosMarcados = 0;
+            for (i = 0; i < conhecimentos.length; i++) {
+                if (conhecimentos[i].checked == TRUE) {
+                    conhecimentosMarcados++;
+                }
+            }
+            if (conhecimentosMarcados != 2) {
+                alert("É necessário marcar 2 conhecimentos.");
+                return FALSE;
+            }
+
+
+        }
+    </script>
 </body>
 
 </html>
