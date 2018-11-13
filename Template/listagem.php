@@ -58,7 +58,7 @@
             </tr>
 				<?php
                     include "../dao/conexao.php";
-
+                    include "../Validation/sessionValidation.php";
                     $consulta = "select * from usuario";
                     $resultado = mysqli_query($GLOBALS["conexao"],$consulta);
 

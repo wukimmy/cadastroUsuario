@@ -1,4 +1,5 @@
 <?php
+    include "../Validation/sessionValidation.php";
     $erro = false;
     $log = "";
     if($conhecimento == "" ){

@@ -30,7 +30,7 @@
 			<div class="card-content white-text">
 				<span class="card-title">Gravar</span>
 					<?php
-						include "../Validation/session.php";
+						include "../Validation/sessionValidation.php";
 						include "conexao.php";
 						$codigo	= $_POST['codigo'];
 						$nome	= $_POST['nome'];

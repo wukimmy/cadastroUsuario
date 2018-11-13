@@ -26,6 +26,7 @@
     </nav>
     <?php
         include "../dao/conexao.php";
+        include "../Validation/sessionValidation.php";
                 $cod = $_GET['cod'];
 
                 $query = "select * from usuario where codigo = '$cod'";

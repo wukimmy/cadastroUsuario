@@ -8,3 +8,10 @@ CREATE TABLE usuario (
     conhecimento varchar(2000),
     PRIMARY KEY (codigo)
 );
+
+CREATE TABLE login (
+    codigo char(7) NOT NULL,
+    nome varchar(255) NOT NULL,
+    senha varchar(50) NOT NULL,
+    PRIMARY KEY (codigo)
+);
