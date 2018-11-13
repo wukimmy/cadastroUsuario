@@ -28,6 +28,7 @@
 		<div class="card-content white-text">
 		    <span class="card-title">Gravar</span>
             <?php
+                include "../Validation/session.php";
                 include "conexao.php";
                 $codigo	= $_GET['cod'];
 
