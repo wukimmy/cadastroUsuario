@@ -79,7 +79,7 @@
             </label>
             <br />
             <br />
-            <button id="submit" type="submit" onclick="">
+            <button id="submit" type="submit" onclick="validaForm">
                 Enviar
             </button>
             <button id="limpar" type="reset">
@@ -91,6 +91,7 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script>
         function validaForm() {
+            console.log("estou validando o form");
             var tamanho_nome = document.forms["meuForm"].nome.value.length;
             if (tamanho_nome < 5 || tamanho_nome > 64) {
                 alert("O campo 'Nome' deve ter entre 5 e 64 caracteres.");
@@ -135,8 +136,6 @@
                 alert("É necessário marcar 2 conhecimentos.");
                 return FALSE;
             }
-
-
         }
     </script>
 </body>

@@ -31,6 +31,7 @@
 				<span class="card-title">Gravar</span>
 					<?php
 						include "conexao.php";
+						$codigo	= $_POST['codigo'];
 						$nome	= $_POST['nome'];
 						$idade	= $_POST['idade'];
 						$email	= $_POST['email'];
@@ -41,6 +42,7 @@
 						$word = ( isset($_POST['word']) ) ? $conhecimento =$conhecimento."Microsoft Word - " : null;
 						$php = ( isset($_POST['php']) ) ? $conhecimento =$conhecimento."PHP - " : null;
 						$js = ( isset($_POST['js']) ) ? $conhecimento =$conhecimento."JavaScript - " : null;
+						include "../validation/formValidation.php";
 
 						// Montando a query
 						$query  ='INSERT usuario VALUES ("'.$codigo .'","'.$nome .'","'.$idade .'","'.$email .'","'.$sexo  .'","'.$curso .'","'.$conhecimento .'");';

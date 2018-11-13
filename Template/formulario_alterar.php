@@ -73,8 +73,31 @@
                 <option value="engenharia" >Engenharia da computação</option>
             </select>
             <br />
-            <button id="submit" type="submit">
+            Conhecimentos:
+            <br />
+            <label>
+                <input type="checkbox" name="word" />
+                <span>Microsoft Word</span>
+            </label>
+            <label>
+                <input type="checkbox" name="html" value="HTML" />
+                <span>HTML</span>
+            </label>
+            <label>
+                <input type="checkbox" name="js" value="JavaScript" />
+                <span>JavaScript</span>
+            </label>
+            <label>
+                <input type="checkbox" name="php" value="PHP" />
+                <span>PHP</span>
+            </label>
+            <br />
+            <br />
+            <button id="submit" type="submit" onclick="">
                 Enviar
+            </button>
+            <button id="limpar" type="reset">
+                Limpar
             </button>
             </form>
         </form>

@@ -34,10 +34,16 @@
 					$idade	= $_POST['idade'];
 					$email	= $_POST['email'];
 					$sexo	= $_POST['campo_sexo'];
-					$curso	= $_POST['curso'];
-
+					$curso	= $_POST['curso'] ? $_POST['curso'] : null;
+					$conhecimento =" ";
+					$html = ( isset($_POST['html']) ) ? $conhecimento = $conhecimento."HTML - " : null;
+					$word = ( isset($_POST['word']) ) ? $conhecimento =$conhecimento."Microsoft Word - " : null;
+					$php = ( isset($_POST['php']) ) ? $conhecimento =$conhecimento."PHP - " : null;
+					$js = ( isset($_POST['js']) ) ? $conhecimento =$conhecimento."JavaScript - " : null;
+					
+					include "../validation/formValidation.php";
 					// Montando a query
-					$query  = "update usuario set nome = '$nome', idade = '$idade', email = '$email',sexo = '$sexo',curso = '$curso'"; 
+					$query  = "update usuario set nome = '$nome', idade = '$idade', email = '$email',sexo = '$sexo',curso = '$curso',conhecimento = '$conhecimento'"; 
 					$query .= "where codigo = '$codigo'";
 
 					// executando a query

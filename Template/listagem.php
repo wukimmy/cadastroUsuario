@@ -47,6 +47,9 @@
                     Curso
                 </th>
                 <th>
+                    Conhecimento
+                </th>
+                <th>
                     --
                 </th>
                 <th>
@@ -70,6 +73,7 @@
                             echo '<td>' .$registro->email .  '</td>' ;
                             echo '<td>' .$registro->sexo .   '</td>';
                             echo '<td>' .$registro->curso .  '</td>';
+                            echo '<td>' .$registro->conhecimento .  '</td>';
                             echo "<td><a href='../dao/excluir.php?cod=$registro->codigo'> Excluir </a></td>";
                             echo "<td><a href='formulario_alterar.php?cod=$registro->codigo'>Editar </a></td>";
                             echo '</tr>';
