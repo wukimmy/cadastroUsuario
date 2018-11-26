@@ -10,7 +10,7 @@
     <meta charset="utf8">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Erro</title>
+    <title>erro</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         </div>
     </nav>
     <div class="container">
-        Ocorreu um erro ao fazer a ação:
+        <h1>Ocorreu um erro ao fazer a ação:</h1>
         <br>
         <?php
             $log = $_GET['log'];

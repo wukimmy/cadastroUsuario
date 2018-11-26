@@ -34,7 +34,7 @@
     }
     if($erro){
         echo $log;
-        header("Location: http://localhost:8088/cadastroUsuario/Template/erro.php/?log=".$log);
+        header("Location: http://localhost:8088/cadastroUsuario/Template/erro.php?log=".$log);
         exit();
     }
 ?>
